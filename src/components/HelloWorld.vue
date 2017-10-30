@@ -33,23 +33,14 @@
       }
     },
     mounted: function () {
-      /*    axios({
-       method:'get',
-       url:'http://127.0.0.1:8090/test',
-       headers:{"Content-Type":"application/x-www-form-urlencoded"}
-       })
-       .then(function (response) {
-       console.log(response);
-       })
-       .catch(function (error) {
-       console.log(error);
-       });*/
       let da = {
         name: 'lwh',
         id: '11'
       }
 
-      this.$get('/test', {name: 'hhh'}, false).then((data) => {
+      let sql = "insert into user set name='小二' , age = 82";
+//      let sql = 'select * from user';
+      this.$get('/test', {sqlString: sql}, false).then((data) => {
         console.log(data);
       });
       this.$post('/testP', da).then((data) => {
